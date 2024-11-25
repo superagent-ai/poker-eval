@@ -1,6 +1,6 @@
 {
   "name": "@superagent-ai/poker-eval",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A poker game simulation library for Node.js",
   "main": "dist/game.js",
   "types": "dist/game.d.ts",

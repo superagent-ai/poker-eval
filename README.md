@@ -20,7 +20,7 @@ npm i @superagent-ai/poker-eval
 ```
 
 ### Create a game
-```
+```ts
 // index.ts
 
 import { PokerGame } from "@superagent-ai/poker-eval";
