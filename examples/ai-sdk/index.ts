@@ -1,7 +1,7 @@
 import { generateAction } from "./agent";
 
-import { PokerGame } from "../../src/game";
-import { Player, PlayerAction } from "../../src/types";
+import { PokerGame } from "@superagent-ai/poker-eval";
+import { Player, PlayerAction } from "@superagent-ai/poker-eval/dist/types";
 
 async function executeGameSimulation(numHands: number): Promise<void> {
   // Setup AI players
