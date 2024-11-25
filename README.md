@@ -85,7 +85,7 @@ In this example, the dataset shows the position of the player, their hole cards,
 
 BB/100, or Big Blinds per 100 hands, is a common metric used in poker to measure a player's win rate. It represents the average number of big blinds a player wins or loses over 100 hands. To calculate BB/100, use the formula:
 
-BB/100 = (Total bb_profit / Number of hands) * 100
+`BB/100 = (Total bb_profit / Number of hands) * 100`
 
 This formula provides a standardized measure of performance, allowing for comparison across different sessions or players by normalizing the win rate to a per-100-hands basis.
 
@@ -93,11 +93,10 @@ This formula provides a standardized measure of performance, allowing for compar
 ## Why Poker? 
 Poker combines elements of strategy, psychology, risk assessment, and partial information - perfect for testing an Agent's decision-making skills in complex, uncertain environments. Poker provides measurable KPIs like EV, BB/100, All-In adj BB/100 and VPIP. These KPIs are widely recognized standards, not created by a single company, making them ideal for objectively evaluating an Agent's decision-making skills.
 
-We've specificalyy chosen No Limit Texas Holdem cash games and are officially calling the eval NLTH.
+We've specificalyy chosen No Limit Texas Holdem cash games and are officially calling the eval `NLTH`.
 
 ## Leaderboard
 Coming soon...
-
 
 ## Examples
 We've created some examples using populat agent frameworks you can use as inspiration (feel free to contribute): 
