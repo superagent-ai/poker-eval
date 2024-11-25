@@ -1,10 +1,26 @@
 import { config } from "dotenv";
 import OpenAI from "openai";
 import { z } from "zod";
-
-import { PlayerAction, TableState } from "../../src/types";
+import { zodResponseFormat } from "openai/helpers/zod";
+import { PlayerAction, TableState } from "@superagent-ai/poker-eval/dist/types";
 
 config();
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+const ActionEnum = z
+  .enum(["bet", "fold", "call", "check", "raise"])
+  .describe("The action to take");
+
+const responseSchema = z.object({
+  action: ActionEnum,
+  bet: z
+    .number()
+    .describe("The amount to bet, call, raise, or check")
+    .optional(),
+});
 
 export const generateAction = async (
   state: TableState
@@ -40,26 +56,16 @@ Considering the hand strength, potential opponent hands, and optimal strategy, w
 Make sure to return the correct amount when calling, raising or bettings.
   `;
 
-  const { object } = await generateObject({
-    model: openai("gpt-4o"),
-    prompt,
-    schema: z
-      .object({
-        action: ActionEnum,
-        bet: z
-          .number()
-          .describe("The amount to bet, call, raise or check")
-          .optional(),
-        //reasoning: z
-        //	.string()
-        //	.describe("Reasoning for the action")
-        //	.optional(),
-      })
-      .required(),
+  const completion = await openai.beta.chat.completions.parse({
+    model: "gpt-4o",
+    messages: [{ role: "user", content: prompt }],
+    response_format: zodResponseFormat(responseSchema, "action"),
   });
 
+  const { action, bet } = completion.choices[0].message.parsed;
+
   return {
-    action: object.action,
-    bet: object.bet ?? 0,
+    action,
+    bet: bet ?? 0,
   } as PlayerAction;
 };

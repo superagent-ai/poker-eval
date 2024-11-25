@@ -2,8 +2,7 @@ import { config } from "dotenv";
 import { generateObject } from "ai";
 import { openai } from "@ai-sdk/openai";
 import { z } from "zod";
-
-import { PlayerAction, TableState } from "../../src/types";
+import { PlayerAction, TableState } from "@superagent-ai/poker-eval/dist/types";
 
 config();
 
