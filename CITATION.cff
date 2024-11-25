@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Ismail"
+  given-names: "Pelaseyd"
+title: "Superagent PokerEval"
+date-released: 2024-11-25
+url: "https://github.com/superagent-ai/poker-eval"
