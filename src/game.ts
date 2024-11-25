@@ -57,9 +57,30 @@ export class PokerGame {
     return this.table.roundOfBetting();
   }
 
+  protected getPositions(numPlayers: number, buttonIndex: number): string[] {
+    const positions = ["BTN", "SB", "BB"];
+    const remainingPositions = ["UTG", "MP", "LJ", "HJ", "CO"];
+
+    while (positions.length < numPlayers) {
+      if (numPlayers - positions.length > 3) {
+        positions.push(remainingPositions.shift() || "MP");
+      } else {
+        positions.push("EP");
+      }
+    }
+
+    return [
+      ...positions.slice(-buttonIndex),
+      ...positions.slice(0, -buttonIndex),
+    ];
+  }
+
   protected saveHandHistory(
     initialStacks: number[],
     finalStacks: number[],
+    holeCards: Card[][],
+    communityCards: Card[],
+    buttonPosition: number,
     savePath?: string
   ): void {
     if (!savePath) return;
@@ -68,19 +89,39 @@ export class PokerGame {
       throw new Error("Initial and final stacks must have the same length.");
     }
 
+    const positions = this.getPositions(this.players.length, buttonPosition);
+    const communityCardsString = communityCards
+      .map((card) => this.cardToText(card))
+      .join(" ");
+
     initialStacks.forEach((initialStack, index) => {
       const finalStack = finalStacks[index];
       const playerName = this.players[index].name;
+      const playerHoleCards = holeCards[index];
+      const position = positions[index];
 
       if (initialStack !== 0 || finalStack !== 0) {
         const diff = (finalStack - initialStack) / this.config.bigBlind;
         const filePath = path.join(savePath, `${playerName}.csv`);
 
         if (!fs.existsSync(filePath)) {
-          fs.writeFileSync(filePath, "hand_result\n", { flag: "w" });
+          fs.writeFileSync(
+            filePath,
+            "position,hole_cards,community_cards,bb_profit\n",
+            {
+              flag: "w",
+            }
+          );
         }
 
-        fs.appendFileSync(filePath, `${diff}\n`);
+        const holeCardsString = playerHoleCards
+          .map((card) => this.cardToText(card))
+          .join(" ");
+
+        fs.appendFileSync(
+          filePath,
+          `${position},${holeCardsString},${communityCardsString},${diff}\n`
+        );
       }
     });
   }
@@ -276,11 +317,15 @@ export class PokerGame {
     winners: [number, Card[]][];
   }> {
     const initialStacks = this.getPlayerStacks().filter((stack) => stack);
+
     this.table.startHand();
     this.triggerDealHoleCardsEvent();
     this.triggerPostBlindsEvent();
 
     while (this.table.isHandInProgress()) {
+      const holeCards = this.table.holeCards();
+      const buttonPosition = this.table.button();
+
       while (this.table.isBettingRoundInProgress()) {
         const seatIndex = this.table.playerToAct();
         await this.handlePlayerAction(seatIndex, this.getGameStage());
@@ -292,14 +337,21 @@ export class PokerGame {
       }
 
       if (this.table.areBettingRoundsCompleted()) {
-        const finalPots = this.table.pots().map((pot: any) => ({ ...pot }));
+        const communityCards = this.table.communityCards() || [];
         this.table.showdown();
         const finalStacks = this.getPlayerStacks().filter((stack) => stack);
 
         const winners = this.table.winners();
 
         if (options.outputPath) {
-          this.saveHandHistory(initialStacks, finalStacks, options.outputPath);
+          this.saveHandHistory(
+            initialStacks,
+            finalStacks,
+            holeCards,
+            communityCards,
+            buttonPosition,
+            options.outputPath
+          );
         }
 
         this.triggerShowdownEvent(initialStacks, finalStacks);
