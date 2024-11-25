@@ -1,0 +1,17 @@
+{
+  "name": "ai-sdk",
+  "version": "1.0.0",
+  "description": "Agent evals with Vercel AI SDK",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ai-sdk/openai": "^1.0.4",
+    "ai": "^4.0.3",
+    "dotenv": "^16.4.5",
+    "zod": "^3.23.8"
+  }
+}
