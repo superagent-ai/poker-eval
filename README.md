@@ -36,6 +36,7 @@ async function executeGameSimulation(numHands: number): Promise<void> {
     {
       name: "GPT 1",
       action: async (state): Promise<PlayerAction> => {
+        // Use any model, framework or code to generate a response
         const action = await generateAction(state);
         return action;
       },
@@ -43,6 +44,7 @@ async function executeGameSimulation(numHands: number): Promise<void> {
     {
       name: "GPT 2",
       action: async (state): Promise<PlayerAction> => {
+        // Use any model, framework or code to generate a response
         const action = await generateAction(state);
         return action;
       },
@@ -100,11 +102,11 @@ Coming soon...
 ## Examples
 We've created some examples using populat agent frameworks you can use as inspiration (feel free to contribute): 
 
-- [Vercel AI SDK]()
-- [OpeaAI]()
-- [Mastra]()
-- [LlamaIndex]()
-- [Langchain]()
+- [Vercel AI SDK](https://github.com/superagent-ai/poker-eval/tree/main/examples/ai-sdk)
+- [OpeaAI]() Coming soon
+- [Mastra]() Coming soon
+- [LlamaIndex]() Coming soon
+- [Langchain]() Coming soon
 
 ## Citations
 ```json
