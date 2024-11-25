@@ -24,10 +24,11 @@ npm i @superagent-ai/poker-eval
 // index.ts
 
 import { PokerGame } from "@superagent-ai/poker-eval";
+import { Player, PlayerAction } from "@superagent-ai/poker-eval/dist/types"
 
 // See example agent: https://github.com/superagent-ai/poker-eval/blob/main/examples/ai-sdk/agent.ts
 import { generateAction } from "./agent";
-import { Player, PlayerAction } from "../../src/types";
+
 
 async function executeGameSimulation(numHands: number): Promise<void> {
   // Setup AI players
