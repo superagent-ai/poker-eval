@@ -115,7 +115,7 @@ We've created some examples using populat agent frameworks you can use as inspir
   "authors": [
     {
       "family-names": "Ismail",
-      "given-names": "Pelaseyd"
+      "given-names": "Pelaseyed"
     }
   ],
   "title": "Superagent PokerEval",
