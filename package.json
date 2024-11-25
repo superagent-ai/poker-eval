@@ -1,5 +1,5 @@
 {
-  "name": "poker-eval",
+  "name": "@superagent/poker-eval",
   "version": "1.0.0",
   "description": "A poker game simulation library for Node.js",
   "main": "dist/game.js",
@@ -18,6 +18,10 @@
   ],
   "author": "Ismail Pelaseyed",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/superagent-ai/poker-eval.git"
+  },
   "dependencies": {
     "poker-ts": "^1.0.0"
   },
