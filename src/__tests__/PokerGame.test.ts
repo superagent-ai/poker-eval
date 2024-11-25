@@ -255,6 +255,8 @@ describe("No Limit Texas Holdem ($5/10)", () => {
         { action: "fold" },
         { action: "call" },
         { action: "call" },
+        { action: "call" },
+        { action: "call" },
       ]);
       const game = new PokerGame(players, {
         defaultChipSize: 1000,
@@ -262,7 +264,7 @@ describe("No Limit Texas Holdem ($5/10)", () => {
         bigBlind: 10,
       });
       const numHands = 5;
-      const results = await game.runSimulation(numHands);
+      const results = await game.runSimulation(numHands, { outputPath: "./" });
 
       expect(results.handResults.length).toEqual(numHands);
     });
