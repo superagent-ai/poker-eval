@@ -102,7 +102,7 @@ Coming soon...
 We've created some examples using populat agent frameworks you can use as inspiration (feel free to contribute): 
 
 - [Vercel AI SDK](https://github.com/superagent-ai/poker-eval/tree/main/examples/ai-sdk)
-- [OpeaAI]() Coming soon
+- [OpenAI]() Coming soon
 - [Mastra]() Coming soon
 - [LlamaIndex]() Coming soon
 - [Langchain]() Coming soon
