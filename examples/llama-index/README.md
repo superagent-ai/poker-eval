@@ -11,5 +11,5 @@ This examples shows how to integrate an Agent built with the [Llama Index TS SDK
 
 3. Run evaluation
     ```
-    ts-node index.ts
+    npm run start
     ```
