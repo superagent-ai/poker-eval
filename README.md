@@ -105,7 +105,7 @@ We've created some examples using populat agent frameworks you can use as inspir
 - [OpenAI](https://github.com/superagent-ai/poker-eval/tree/main/examples/openai)
 - [Mastra]() Coming soon
 - [LlamaIndex]() Coming soon
-- [Langchain]() Coming soon
+- [Langchain](https://github.com/superagent-ai/poker-eval/tree/main/examples/langchain)
 
 ## Citations
 ```json

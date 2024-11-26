@@ -1,7 +1,7 @@
 {
-  "name": "pokereval-openai",
+  "name": "pokereval-langchain",
   "version": "1.0.0",
-  "description": "Poker agent evals with OpenAI",
+  "description": "Poker agent evals with Langchain",
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,9 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@langchain/core": "^0.3.19",
+    "@langchain/openai": "^0.3.14",
     "@superagent-ai/poker-eval": "^1.0.1",
     "dotenv": "^16.4.5",
-    "openai": "^4.73.1",
     "zod": "^3.23.8"
   }
 }

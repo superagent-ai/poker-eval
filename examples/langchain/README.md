@@ -1,6 +1,6 @@
-# PokerEval and OpenAI Node SDK
+# PokerEval and Langchain TS SDK
 
-This examples shows how to integrate an Agent built with the [OpenAI Node SDK](https://github.com/openai/openai-node) and PokerEval.
+This examples shows how to integrate an Agent built with the [Langchain TS SDK](https://github.com/openai/openai-node) and PokerEval.
 
 ## How to use
 1. Install dependencies
