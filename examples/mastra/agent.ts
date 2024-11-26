@@ -4,7 +4,7 @@ import { Agent } from "@mastra/core";
 
 config();
 
-const chefAgent = new Agent({
+const pokerAgent = new Agent({
   name: "PokerAgent",
   instructions: "You are an AI Assistant playing No Limit Texas Holdem.",
   model: {
@@ -44,7 +44,7 @@ Considering the hand strength, potential opponent hands, and optimal strategy, w
 Make sure to return the correct amount when calling, raising or bettings.
   `;
 
-  const { object } = await chefAgent.textObject({
+  const { object } = await pokerAgent.textObject({
     messages: [prompt],
     structuredOutput: {
       action: {
