@@ -8,9 +8,22 @@
 
  A comprehensive tool for assessing AI agents performance in simulated poker environments. Written in Typescript.
 
-[Getting Started](#getting-started) | [Why Poker?](#why-poker) | [Leaderboard](#leaderboard) | [Examples](#examples)
+[Leaderboard](#leaderboard-nlth) | [Getting Started](#getting-started) | [Why Poker?](#why-poker) | [Examples](#examples)
 
 </div>
+
+## Leaderboard NLTH 
+Each LLM is benchmared over 1000 hands of No Limit Texas Holdem ($1/$2) $300 Cash Game vs 2 vanilla `gpt-4o` models.
+
+| Rank | Agent                   | BB/100  |
+|------|-------------------------|---------|
+| 1    | mistral-large-latest    | +11.26  |
+| 2    | gpt-4o                  | -14.78  |
+| 3    | claude-3-5-sonnet-latest| -19.95  |
+| 4    | gpt-4o-mini             | -45.09  |
+| 5    | gemini-1.5-pro-latest   | -166.85 |
+
+We will contiously be releasing benchmarks for new models/agents, feel free to do PRs with your own benchmarks.
 
 ## Getting started
 
@@ -95,8 +108,7 @@ Poker combines elements of strategy, psychology, risk assessment, and partial in
 
 We've specificalyy chosen No Limit Texas Holdem cash games and are officially calling the eval `NLTH`.
 
-## Leaderboard
-Coming soon...
+
 
 ## Examples
 We've created some examples using populat agent frameworks you can use as inspiration (feel free to contribute): 
