@@ -1,6 +1,6 @@
-# PokerEval and Langchain TS SDK
+# PokerEval and Llama Index TS SDK
 
-This examples shows how to integrate an Agent built with the [Langchain TS SDK](https://js.langchain.com/docs/introduction) and PokerEval.
+This examples shows how to integrate an Agent built with the [Llama Index TS SDK](https://legacy.ts.llamaindex.ai/) and PokerEval.
 
 ## How to use
 1. Install dependencies

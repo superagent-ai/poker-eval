@@ -104,7 +104,7 @@ We've created some examples using populat agent frameworks you can use as inspir
 - [Vercel AI SDK](https://github.com/superagent-ai/poker-eval/tree/main/examples/ai-sdk)
 - [OpenAI](https://github.com/superagent-ai/poker-eval/tree/main/examples/openai)
 - [Mastra]() Coming soon
-- [LlamaIndex]() Coming soon
+- [LlamaIndex](https://github.com/superagent-ai/poker-eval/tree/main/examples/llama-index)
 - [Langchain](https://github.com/superagent-ai/poker-eval/tree/main/examples/langchain)
 
 ## Citations
