@@ -11,5 +11,5 @@ This examples shows how to integrate an Agent built with the [OpenAI Node SDK](h
 
 3. Run evaluation
     ```
-    ts-node index.ts
+    npm run start
     ```

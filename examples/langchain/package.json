@@ -4,7 +4,8 @@
   "description": "Poker agent evals with Langchain",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts"
   },
   "author": "",
   "license": "ISC",

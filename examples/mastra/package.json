@@ -1,0 +1,22 @@
+{
+  "name": "pokereval-mastra",
+  "version": "1.0.0",
+  "description": "Poker agent evals with Mastra AI SDK",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsx index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mastra/core": "^0.1.27-alpha.12",
+    "@superagent-ai/poker-eval": "^1.0.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
