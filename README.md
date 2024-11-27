@@ -13,7 +13,7 @@
 </div>
 
 ## Leaderboard NLTH 
-Each LLM is benchmared over 1000 hands of No Limit Texas Holdem ($1/$2) $300 Cash Game vs 2 vanilla `gpt-4o` models.
+Each LLM is benchmared over 1000 hands of No Limit Texas Holdem ($1/$2) $300 Cash Game vs 2 vanilla `gpt-4o` models. We will contiously be releasing benchmarks for new models/agents, feel free to do PRs with your own benchmarks.
 
 | Rank | Agent                   | BB/100  |
 |------|-------------------------|---------|
@@ -23,7 +23,7 @@ Each LLM is benchmared over 1000 hands of No Limit Texas Holdem ($1/$2) $300 Cas
 | 4    | gpt-4o-mini             | -45.09  |
 | 5    | gemini-1.5-pro-latest   | -166.85 |
 
-We will contiously be releasing benchmarks for new models/agents, feel free to do PRs with your own benchmarks.
+
 
 ## Getting started
 
